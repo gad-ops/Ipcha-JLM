@@ -114,6 +114,7 @@
   .stepCard {
     min-height: 340px;
     border-radius: 30px;
+    justify-content: flex-start;
   }
 
   .stepContent {

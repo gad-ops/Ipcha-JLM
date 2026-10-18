@@ -9,6 +9,7 @@ import iconPin from '../../../../assets/misc/icon-pin.svg'
 import logoLockup from '../../../../assets/misc/logo-footer-lockup.svg'
 import whatsappBubble from '../../../../assets/misc/whatsapp-bubble.png'
 import { ContactForm } from './ContactForm'
+import { HomeLink } from './HomeLink'
 import styles from './Footer.module.css'
 import { NAV_LINKS } from './navLinks'
 
@@ -39,7 +40,9 @@ export function Footer() {
     <footer className={styles.footer} id="contact">
       <div className={styles.inner}>
         <div className={styles.right}>
-          <Image src={logoLockup} alt="איפכא" className={styles.logo} />
+          <HomeLink className={styles.logoLink} aria-label="איפכא - לעמוד הבית">
+            <Image src={logoLockup} alt="איפכא" className={styles.logo} />
+          </HomeLink>
           <ul className={styles.sitemap}>
             {NAV_LINKS.map((link) => (
               <li key={link.href}>

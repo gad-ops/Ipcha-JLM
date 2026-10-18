@@ -12,6 +12,8 @@ const TOOLTIP_PIN_PATH = 'M0 8C0 3.58172 3.58172 0 8 0H9.376V33L0 45V8Z'
 export function MapAccordion({ locations }: { locations: MapLocation[] }) {
   const [activeId, setActiveId] = useState<number | undefined>(undefined)
   const activeLocation = locations.find((location) => location.id === activeId)
+  // Clicking the open item again closes it
+  const toggle = (id: number) => setActiveId((current) => (current === id ? undefined : id))
 
   return (
     <div className={styles.wrapper}>
@@ -23,7 +25,8 @@ export function MapAccordion({ locations }: { locations: MapLocation[] }) {
               <button
                 type="button"
                 className={styles.rowHeader}
-                onClick={() => setActiveId(location.id)}
+                aria-expanded={isOpen}
+                onClick={() => toggle(location.id)}
               >
                 <span className={styles.rowSign}>{isOpen ? '-' : '+'}</span>
                 <span className={styles.rowTitle}>{location.title}</span>
@@ -54,7 +57,7 @@ export function MapAccordion({ locations }: { locations: MapLocation[] }) {
               type="button"
               className={`${styles.pin} ${activeId === location.id ? styles.pinActive : ''}`}
               style={{ left: `${location.position.x}%`, top: `${location.position.y}%` }}
-              onClick={() => setActiveId(location.id)}
+              onClick={() => toggle(location.id)}
               aria-label={location.title}
             >
               {location.order}
