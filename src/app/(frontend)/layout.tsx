@@ -4,11 +4,12 @@ import { AdminBarProvider } from './components/AdminBarProvider'
 import { Footer } from './components/Footer'
 import { Nav } from './components/Nav'
 import { arbel, arbelStencil, eshkolita } from './fonts'
+import { pageMetadata } from './seo'
 
-export const metadata = {
-  description: 'עמותת איפכא - מרחב חינוכי לקהילה',
-  title: 'איפכא',
-}
+export const metadata = pageMetadata(
+  'איפכא',
+  'הבית למורים והמורות שרוצים להתנסות בעיצוב מהלכי הוראה ולחלום בגדול וביחד. כאן בונים ומתנסים. קהילת המורים והמנהלים של פסגת זאב.',
+)
 
 export default async function RootLayout(props: { children: React.ReactNode }) {
   const { children } = props

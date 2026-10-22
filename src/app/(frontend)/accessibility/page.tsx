@@ -1,8 +1,10 @@
+import { pageMetadata } from '../seo'
 import styles from './page.module.css'
 
-export const metadata = {
-  title: 'הצהרת נגישות | איפכא',
-}
+export const metadata = pageMetadata(
+  'הצהרת נגישות | איפכא',
+  'המחויבות של איפכא להנגשת האתר לכל המשתמשים, התאמות הנגישות שבוצעו באתר ודרכים לפנות אלינו בנושא נגישות.',
+)
 
 export default function AccessibilityPage() {
   return (

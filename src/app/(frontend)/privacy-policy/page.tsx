@@ -1,8 +1,10 @@
+import { pageMetadata } from '../seo'
 import styles from './page.module.css'
 
-export const metadata = {
-  title: 'מדיניות פרטיות | איפכא',
-}
+export const metadata = pageMetadata(
+  'מדיניות פרטיות | איפכא',
+  'איך איפכא אוספת, משתמשת ושומרת על המידע שאתם משאירים באתר, ומה הזכויות שלכם לגבי המידע האישי שלכם.',
+)
 
 export default function PrivacyPolicyPage() {
   return (

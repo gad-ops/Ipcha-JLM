@@ -6,10 +6,13 @@ import { ContentLibraryCard } from '../components/ContentLibraryCard'
 import { PageHero } from '../components/PageHero'
 import { PhotoBand } from '../components/PhotoBand'
 import styles from './page.module.css'
+import { OG_IMAGES, pageMetadata } from '../seo'
 
-export const metadata = {
-  title: 'מאגר תכנים | איפכא',
-}
+export const metadata = pageMetadata(
+  'מאגר תכנים | איפכא',
+  'עזרים פדגוגיים חדשניים לתכנון חוויות הוראה ולמידה, מוכנים לשימוש.',
+  OG_IMAGES.contentLibrary,
+)
 
 export default async function ContentLibraryPage() {
   const payloadConfig = await config

@@ -7,10 +7,13 @@ import { PageHero } from '../components/PageHero'
 import { PhotoBand } from '../components/PhotoBand'
 import { WhatsHappeningGrid } from '../components/WhatsHappeningGrid'
 import styles from './page.module.css'
+import { OG_IMAGES, pageMetadata } from '../seo'
 
-export const metadata = {
-  title: 'שותפים ותוכניות | איפכא',
-}
+export const metadata = pageMetadata(
+  'שותפים ותוכניות | איפכא',
+  'הדרכים בהן נוכל לעבוד יחד בשנת הלימודים כדי להפוך את האתגרים החינוכיים היום־יומיים שלכם להזדמנויות לצמיחה.',
+  OG_IMAGES.partners,
+)
 
 export default async function PartnersPage() {
   const payloadConfig = await config

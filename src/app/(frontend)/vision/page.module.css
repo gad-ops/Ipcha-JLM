@@ -98,6 +98,10 @@
   padding: 0 2px;
 }
 
+.markerBlue {
+  background: #d0ebfd;
+}
+
 @media (max-width: 900px) {
   .beliefsRow {
     flex-direction: column;

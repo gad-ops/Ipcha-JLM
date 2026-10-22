@@ -6,10 +6,13 @@ import { PageHero } from '../components/PageHero'
 import { PhotoBand } from '../components/PhotoBand'
 import { WorkshopTeaserCard } from '../components/WorkshopTeaserCard'
 import styles from './page.module.css'
+import { OG_IMAGES, pageMetadata } from '../seo'
 
-export const metadata = {
-  title: 'סדנאות והשתלמויות | איפכא',
-}
+export const metadata = pageMetadata(
+  'סדנאות והשתלמויות | איפכא',
+  'מגוון הסדנאות שלנו מותאמות לצוותים, ימי היערכות, השתלמויות ועוד. בואו להכיר כלים חדשניים לדיוק מטרות, יצירת מענים ייחודיים ופיתוח היצירתיות.',
+  OG_IMAGES.workshops,
+)
 
 export default async function WorkshopsPage() {
   const payloadConfig = await config

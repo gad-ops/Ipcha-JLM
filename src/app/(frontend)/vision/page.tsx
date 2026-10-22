@@ -16,6 +16,7 @@ import { PageHero } from '../components/PageHero'
 import { PhotoBand } from '../components/PhotoBand'
 import { StepCardStack, type Step } from '../components/StepCardStack'
 import styles from './page.module.css'
+import { OG_IMAGES, pageMetadata } from '../seo'
 
 const BELIEFS_ROWS = [
   [
@@ -67,9 +68,11 @@ const BELIEFS_ROWS = [
   ],
 ]
 
-export const metadata = {
-  title: 'החזון שלנו | איפכא',
-}
+export const metadata = pageMetadata(
+  'החזון שלנו | איפכא',
+  'אצלינו מחברים בין חינוך לעיצוב, והכל בתהליכים מבוססי צורך על פי המודל שפותח באוניברסיטת סטנפורד.',
+  OG_IMAGES.vision,
+)
 
 const PROCESS_STEPS: Step[] = [
   {
@@ -136,7 +139,7 @@ export default function VisionPage() {
 
         <FadeInView>
           <p className={styles.quote}>
-            אז...בואו לעצב איתנו
+            אז... בואו לעצב איתנו
             <br />
             <span className={styles.quoteHighlightWrap}>
               <span className={styles.quoteHighlightBg} />
@@ -159,8 +162,12 @@ export default function VisionPage() {
             <h2 className={styles.reflectionHeading}>איך מעצבים חווית הוראה?</h2>
             <p>
               כאשר מתחיל תהליך העיצוב, המעצבים שלנו נפגשים עם המורה, בוחרים תחום דעת ומבררים יחד איתו
-              מהם האתגרים שהוא חווה בשגרת ההוראה. באמצעות כלי חשיבה עיצובית חוקרים ומדייקים את הצורך,
-              ויחד מזהים את האזורים שבהם אפשר לפעול כדי לייצר שינוי. לאחר מכן, בסיעור מוחות יצירתי,
+              מהם האתגרים שהוא חווה בשגרת ההוראה.{' '}
+              <mark className={`${styles.marker} ${styles.markerBlue}`}>
+                באמצעות כלי חשיבה עיצובית חוקרים ומדייקים את הצורך, ויחד מזהים את האזורים שבהם אפשר
+                לפעול כדי לייצר שינוי.
+              </mark>{' '}
+              לאחר מכן, בסיעור מוחות יצירתי,
               מעלים מגוון רעיונות לפתרונות, בוחרים את הפתרון בעל פוטנציאל ההצלחה הגבוה ביותר, מנסים
               אותו בשטח, בוחנים את מידת ההצלחה שלו וחוזרים חזרה לדיוק, שינוי או ייצור סופי.
             </p>
