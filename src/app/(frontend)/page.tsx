@@ -80,12 +80,20 @@ export default async function HomePage() {
   const payloadConfig = await config
   const payload = await getPayload({ config: payloadConfig })
 
-  const latestWorkshops = await payload.find({
+  // The workshop marked "תצוגה בעמוד הבית" in the admin, falling back to the latest published one
+  const featuredWorkshops = await payload.find({
     collection: 'workshops',
-    sort: '-date',
     limit: 1,
-    where: { status: { not_equals: 'draft' } },
+    where: { status: { not_equals: 'draft' }, featuredOnHome: { equals: true } },
   })
+  const latestWorkshops = featuredWorkshops.docs.length
+    ? featuredWorkshops
+    : await payload.find({
+        collection: 'workshops',
+        sort: '-createdAt',
+        limit: 1,
+        where: { status: { not_equals: 'draft' } },
+      })
   const latestWorkshop = latestWorkshops.docs[0]
 
   return (

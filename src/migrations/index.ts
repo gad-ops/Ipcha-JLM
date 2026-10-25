@@ -2,6 +2,7 @@ import * as migration_20260813_063814_initial_schema from './20260813_063814_ini
 import * as migration_20260813_215551_map_locations from './20260813_215551_map_locations';
 import * as migration_20260817_064512_contact_consent_fields from './20260817_064512_contact_consent_fields';
 import * as migration_20261014_064132_add_status_field from './20261014_064132_add_status_field';
+import * as migration_20261025_082126_workshop_text_date_featured from './20261025_082126_workshop_text_date_featured';
 
 export const migrations = [
   {
@@ -22,6 +23,11 @@ export const migrations = [
   {
     up: migration_20261014_064132_add_status_field.up,
     down: migration_20261014_064132_add_status_field.down,
-    name: '20261014_064132_add_status_field'
+    name: '20261014_064132_add_status_field',
+  },
+  {
+    up: migration_20261025_082126_workshop_text_date_featured.up,
+    down: migration_20261025_082126_workshop_text_date_featured.down,
+    name: '20261025_082126_workshop_text_date_featured'
   },
 ];

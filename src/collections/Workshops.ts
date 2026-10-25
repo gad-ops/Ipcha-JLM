@@ -2,6 +2,7 @@ import type { CollectionConfig } from 'payload'
 
 import { isAdmin } from '../access/isAdmin'
 import { revalidatePaths } from './hooks/revalidatePaths'
+import { keepSingleFeatured } from './hooks/keepSingleFeatured'
 
 const revalidate = revalidatePaths(['/workshops', '/'])
 
@@ -13,7 +14,7 @@ export const Workshops: CollectionConfig = {
   },
   admin: {
     useAsTitle: 'title',
-    defaultColumns: ['title', 'date', 'location', 'status'],
+    defaultColumns: ['title', 'date', 'location', 'status', 'featuredOnHome'],
     components: {
       edit: {
         beforeDocumentControls: [
@@ -30,7 +31,7 @@ export const Workshops: CollectionConfig = {
     delete: isAdmin,
   },
   hooks: {
-    afterChange: [revalidate.afterChange],
+    afterChange: [keepSingleFeatured, revalidate.afterChange],
     afterDelete: [revalidate.afterDelete],
   },
   fields: [
@@ -48,6 +49,19 @@ export const Workshops: CollectionConfig = {
         position: 'sidebar',
         components: {
           Cell: '/components/admin/StatusCell#StatusCell',
+        },
+      },
+    },
+    {
+      name: 'featuredOnHome',
+      label: 'תצוגה בעמוד הבית',
+      type: 'checkbox',
+      defaultValue: false,
+      admin: {
+        position: 'sidebar',
+        description: 'רק סדנה אחת מוצגת בעמוד הבית. אם אף סדנה לא מסומנת, תוצג האחרונה שפורסמה.',
+        components: {
+          Cell: '/components/admin/FeaturedCell#FeaturedCell',
         },
       },
     },
@@ -83,8 +97,11 @@ export const Workshops: CollectionConfig = {
     {
       name: 'date',
       label: 'תאריך',
-      type: 'date',
+      type: 'text',
       required: true,
+      admin: {
+        placeholder: 'לדוגמה: 8.12.26',
+      },
     },
     {
       name: 'hours',

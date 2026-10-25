@@ -178,6 +178,10 @@ export interface Media {
 export interface Workshop {
   id: number;
   status: 'published' | 'draft';
+  /**
+   * רק סדנה אחת מוצגת בעמוד הבית. אם אף סדנה לא מסומנת, תוצג האחרונה שפורסמה.
+   */
+  featuredOnHome?: boolean | null;
   image: number | Media;
   preTitle?: string | null;
   title: string;
@@ -394,6 +398,7 @@ export interface MediaSelect<T extends boolean = true> {
  */
 export interface WorkshopsSelect<T extends boolean = true> {
   status?: T;
+  featuredOnHome?: T;
   image?: T;
   preTitle?: T;
   title?: T;

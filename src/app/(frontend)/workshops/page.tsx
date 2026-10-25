@@ -20,7 +20,7 @@ export default async function WorkshopsPage() {
 
   const workshops = await payload.find({
     collection: 'workshops',
-    sort: '-date',
+    sort: '-createdAt',
     limit: 100,
     where: { status: { not_equals: 'draft' } },
   })

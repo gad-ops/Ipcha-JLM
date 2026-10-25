@@ -8,14 +8,6 @@ import sparkleStar from '../../../../assets/vision/star-pink.svg'
 import { AdminEditLink } from './AdminEditLink'
 import styles from './WorkshopTeaserCard.module.css'
 
-function formatDate(dateString: string) {
-  return new Date(dateString).toLocaleDateString('he-IL', {
-    day: 'numeric',
-    month: 'numeric',
-    year: '2-digit',
-  })
-}
-
 export function WorkshopTeaserCard({ workshop }: { workshop: Workshop }) {
   const image = workshop.image as Media
 
@@ -51,7 +43,7 @@ export function WorkshopTeaserCard({ workshop }: { workshop: Workshop }) {
 
         <div className={styles.metaRow}>
           <div className={`${styles.metaCell} ${styles.metaCellDate}`}>
-            {formatDate(workshop.date)}
+            {workshop.date}
           </div>
           <div className={`${styles.metaCell} ${styles.metaCellHours}`}>{workshop.hours}</div>
           <div className={styles.metaCell}>{workshop.location}</div>

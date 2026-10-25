@@ -1,5 +1,5 @@
-import { VercelBlobClientUploadHandler as VercelBlobClientUploadHandler_dbe4c9beb3b0f2a7b7a12ce17b9c7d3a } from '@payloadcms/storage-vercel-blob/client'
 import { StatusCell as StatusCell_4da1f90de99340c8531cff72a46c36b2 } from '../../../components/admin/StatusCell'
+import { FeaturedCell as FeaturedCell_c6a7b435a9a7940671490a62820e4d38 } from '../../../components/admin/FeaturedCell'
 import { LargeTitleField as LargeTitleField_3d6a237d56f4cda6e5e4b7b62e46bc5f } from '../../../components/admin/LargeTitleField'
 import { BackToListButton as BackToListButton_4163e8a49881fa0dbdeab321b9e10771 } from '../../../components/admin/BackToListButton'
 import { WorkshopLivePreview as WorkshopLivePreview_b7bc2d3d00019c4220a8800645be86b4 } from '../../../components/admin/LivePreview'
@@ -10,12 +10,13 @@ import { ViewSiteLink as ViewSiteLink_33f037dcb8950e7b5e6f0480c9cc4430 } from '.
 import { AdminTheme as AdminTheme_969f35f2f98dbf971e3275c489a5877e } from '../../../components/admin/AdminTheme'
 import { Icon as Icon_dfe4008080d895d460898c3a6155e9ba } from '../../../components/admin/Icon'
 import { Logo as Logo_91a09b539d3c86b0aebf520e7564ce08 } from '../../../components/admin/Logo'
+import { VercelBlobClientUploadHandler as VercelBlobClientUploadHandler_16c82c5e25f430251a3e3ba57219ff4e } from '@payloadcms/storage-vercel-blob/client'
 import { CollectionCards as CollectionCards_f9c02e79a4aed9a3924487c0cd4cafb1 } from '@payloadcms/next/rsc'
 
 /** @type import('payload').ImportMap */
 export const importMap = {
-  "@payloadcms/storage-vercel-blob/client#VercelBlobClientUploadHandler": VercelBlobClientUploadHandler_dbe4c9beb3b0f2a7b7a12ce17b9c7d3a,
   "/components/admin/StatusCell#StatusCell": StatusCell_4da1f90de99340c8531cff72a46c36b2,
+  "/components/admin/FeaturedCell#FeaturedCell": FeaturedCell_c6a7b435a9a7940671490a62820e4d38,
   "/components/admin/LargeTitleField#LargeTitleField": LargeTitleField_3d6a237d56f4cda6e5e4b7b62e46bc5f,
   "/components/admin/BackToListButton#BackToListButton": BackToListButton_4163e8a49881fa0dbdeab321b9e10771,
   "/components/admin/LivePreview#WorkshopLivePreview": WorkshopLivePreview_b7bc2d3d00019c4220a8800645be86b4,
@@ -26,5 +27,6 @@ export const importMap = {
   "/components/admin/AdminTheme#AdminTheme": AdminTheme_969f35f2f98dbf971e3275c489a5877e,
   "/components/admin/Icon#Icon": Icon_dfe4008080d895d460898c3a6155e9ba,
   "/components/admin/Logo#Logo": Logo_91a09b539d3c86b0aebf520e7564ce08,
+  "@payloadcms/storage-vercel-blob/client#VercelBlobClientUploadHandler": VercelBlobClientUploadHandler_16c82c5e25f430251a3e3ba57219ff4e,
   "@payloadcms/next/rsc#CollectionCards": CollectionCards_f9c02e79a4aed9a3924487c0cd4cafb1
 }
