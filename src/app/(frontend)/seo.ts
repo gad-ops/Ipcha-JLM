@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 
 const SITE_NAME = 'איפכא'
 
-// Placeholder until the production domain is known; og:image URLs are resolved against it
-export const SITE_URL = 'http://localhost:3000'
+// Production domain (apex redirects to www); og:image and sitemap URLs are resolved against it
+export const SITE_URL = 'https://www.ipcha.org.il'
 
 // 1200x630 crops of each page's hero, generated into public/og
 export const OG_IMAGES = {
